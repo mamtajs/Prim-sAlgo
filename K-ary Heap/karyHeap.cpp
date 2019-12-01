@@ -80,7 +80,11 @@ public:
 
 	// for inserting just add the element to the end of heap and then shift it up to the correct position
 	void insertIntoHeap(int k, node* n1){
-		heap.push_back(n1);
+
+		if(num_elems >= heap.size())
+			heap.push_back(n1);
+		else
+			heap[num_elems] = n1;
 
 		num_elems++;
 
@@ -106,6 +110,9 @@ public:
 
 	// Show the contents of the heap at this point 
 	void showHeap(){
+		if(num_elems <=0){
+			return;
+		}
 		for(int j =0; j < num_elems; j++){
 			printf("(%d, %d)\t", heap[j]->vertex, heap[j]->weight);
 		}
@@ -118,32 +125,50 @@ public:
 /*int main(){
 
 	karyHeap obj;
-	int ary = 3;
+	int ary = 5;
 
 	node* x = (node*) malloc(sizeof(node*));
 	x->vertex = 0;
-	x->weight = 3;
+	x->weight = 0;
+
+
 	obj.insertIntoHeap(ary, x);
+	//printf("h0\n" );
+	cout << obj.getMin(ary)->weight << endl;
+	//printf("h\n" );
+	obj.showHeap();
+
+	//printf("h1\n" );
+
 	node* x1 = (node*) malloc(sizeof(node*));
 	x1->vertex = 1;
-	x1->weight = 5;
+	x1->weight = 2;
 	obj.insertIntoHeap(ary, x1);
+	//printf("h5\n" );
+	obj.showHeap();
+
+	//printf("h2\n" );
 	node* x2 = (node*) malloc(sizeof(node*));
-	x2->vertex = 2;
-	x2->weight = 8;
+	x2->vertex = 3;
+	x2->weight = 6;
+
 	obj.insertIntoHeap(ary, x2);
-	node* x3 = (node*) malloc(sizeof(node*));
-	x3->vertex = 3;
-	x3->weight = 1;
-	obj.insertIntoHeap(ary, x3);
+	//printf("h3\n" );
 
 	obj.showHeap();
 
-	cout << obj.getMin(ary)->weight << endl;
-	obj.showHeap();
+	
 
 	cout << obj.getMin(ary)->weight << endl;
 	obj.showHeap();
+
+	//cout << obj.getMin(ary)->weight << endl;
+	//obj.showHeap();
+
+	//cout << obj.getMin(ary)->weight << endl;
+	//obj.showHeap();
+	//cout << obj.getMin(ary) << endl;
+	//obj.showHeap();
 
 	return 0;
 }*/
