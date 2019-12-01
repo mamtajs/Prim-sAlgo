@@ -22,7 +22,8 @@ else:
 	maxWeight = int(n)*(int(n)-1)
 
 	# initalize output file
-	outputFile.write("n="+n+", e="+e+"\n")
+	outputFile.write(n+ "\n");
+	outputFile.write(e+ "\n");
 
 	#for each node add an empty list 
 	for node in range(0,int(n)):
@@ -50,7 +51,7 @@ else:
 		
 			adjList[node2].append(node1)
 	
-			outputFile.write(str(node1) + "," + str(node2) + "," + str(weight) + "\n")
+			outputFile.write(str(node1) + " " + str(node2) + " " + str(weight) + "\n")
 			i += 1
 			flagFirst = False
 
@@ -65,7 +66,7 @@ else:
 		
 					adjList[node2].append(node1)
 	
-					outputFile.write(str(node1) + "," + str(node2) + "," + str(weight) + "\n")
+					outputFile.write(str(node1) + " " + str(node2) + " " + str(weight) + "\n")
 					i += 1
 				elif (node2 not in marked) and (node1 in marked):
 					marked.append(node2)
@@ -74,7 +75,7 @@ else:
 		
 					adjList[node2].append(node1)
 
-					outputFile.write(str(node1) + "," + str(node2) + "," + str(weight) + "\n")
+					outputFile.write(str(node1) + " " + str(node2) + " " + str(weight) + "\n")
 					i += 1
 		
 	remainingEdges = int(e)-int(n)+1
@@ -92,7 +93,7 @@ else:
 		
 				adjList[node2].append(node1)
 
-				outputFile.write(str(node1) + "," + str(node2) + "," + str(weight) + "\n")
+				outputFile.write(str(node1) + " " + str(node2) + " " + str(weight) + "\n")
 
 				i += 1
 
