@@ -1,0 +1,8 @@
+1. For 2-ary heap: 1343 microseconds
+2. For 3-ary heap: 239 microseconds
+3. For 4-ary heap: 209 microseconds
+4. For 5-ary heap: 204 microseconds
+5. For 6-ary heap: 197 microseconds
+6. For 7-ary heap: 196 microseconds
+7. For 8-ary heap: 162 microseconds
+8. For 9-ary heap: 216 microseconds
